@@ -11,4 +11,5 @@ import com.example.FullStackReact.model.User;
 public interface UserRepository extends JpaRepository<User,Integer>{
 
 	List<User> findByName(String name);
+//	User findByUsername(String username);
 }
