@@ -1,0 +1,40 @@
+.signUpForm {
+  display: grid;
+  justify-items: stretch;
+  margin-top: 2rem;
+}
+.textInfo {
+  color: white;
+  text-align: center;
+}
+.saveBtn {
+  margin: 1rem 0;
+}
+.signUpText {
+  display: inline-grid;
+  color: white;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.signUpTextArea {
+  display: inline-grid;
+  color: white;
+  font-weight: bold;
+  justify-items: center;
+}
+.backgroundCard {
+  border: 1px solid rgb(175, 175, 175);
+  box-shadow: 3px 3px 21px lightgrey;
+  padding: 5em;
+  border-radius: 4px;
+  background-color: rgb(81, 76, 112);
+  margin-top: 3rem;
+}
+.form-control {
+  padding: 10px;
+  border-radius: 4px;
+  outline: 0;
+}
+.form-control:hover {
+  background-color: rgb(209, 209, 209);
+}
