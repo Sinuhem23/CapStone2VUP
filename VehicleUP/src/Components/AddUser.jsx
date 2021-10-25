@@ -62,7 +62,7 @@ return (
 <div className='signUpContainer'>
   <div className='backgroundCard'>
   <h2 className='textInfo'>Sign Up!</h2>
-  <div className='card-body'>
+  <div className='logInCard-body'>
     <form className='signUpForm'>
       
       <div className='form-group signUpText'>

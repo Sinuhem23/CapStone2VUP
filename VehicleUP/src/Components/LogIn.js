@@ -8,7 +8,7 @@ export default class LogIn extends Component {
       <div>
         <div className='signUpContainer'>
           <div className='backgroundCard'>
-            <h3 className='textInfo'>Log In!</h3>
+            <h2 className='textInfo'>Log In!</h2>
             <div className='logInCard-body'>
               <form className='signInForm'>
                 <div className='form-group signInText'>
