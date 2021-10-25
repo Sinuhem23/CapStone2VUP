@@ -19,8 +19,13 @@
 .signUpTextArea {
   display: inline-grid;
   color: white;
+  font-size: small;
   font-weight: bold;
+  padding: 0 1rem 0 0;
   justify-items: center;
+}
+.signUpBtn {
+  margin-top: 3rem;
 }
 .backgroundCard {
   border: 1px solid rgb(175, 175, 175);

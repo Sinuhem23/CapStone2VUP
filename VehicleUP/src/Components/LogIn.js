@@ -7,39 +7,40 @@ export default class LogIn extends Component {
     return (
       <div>
         <div className='signUpContainer'>
-          <h3 className='textInfo'>Log In!</h3>
-          <div className='logInCard-body'>
-            <form className='signInForm'>
-              <div className='form-group signInText'>
-                <label>User Name: </label>
-                <input
-                  placeholder='Name'
-                  name='name'
-                  className='form-control'
-                  // value={this.state.name}
-                  // onChange={this.nameHandler}
-                />
-              </div>
+          <div className='backgroundCard'>
+            <h3 className='textInfo'>Log In!</h3>
+            <div className='logInCard-body'>
+              <form className='signInForm'>
+                <div className='form-group signInText'>
+                  <label>User Name: </label>
+                  <input
+                    placeholder='Name'
+                    name='name'
+                    className='form-control'
+                    // value={this.state.name}
+                    // onChange={this.nameHandler}
+                  />
+                </div>
 
-              <div className='form-group signInText'>
-                <label>Password: </label>
-                <input
-                  placeholder='Password'
-                  name='password'
-                  className='form-control'
-                  // value={this.state.password}
-                  // onChange={this.passwordHandler}
-                />
-              </div>
-              <button className='loginSubmit'>Submit</button>
-            </form>
-            <div className='signUpSection'>
-              <h3 className='signUpTextArea'>
-                Need To Sign Up?
-                <Link to='/add-user'>
-                  <button>Sign Up</button>
-                </Link>
-              </h3>
+                <div className='form-group signInText'>
+                  <label>Password: </label>
+                  <input
+                    placeholder='Password'
+                    name='password'
+                    className='form-control'
+                    // value={this.state.password}
+                    // onChange={this.passwordHandler}
+                  />
+                </div>
+                <button className='loginSubmit'>Submit</button>
+                <div className='signUpSection'>
+                  <h3 className='signUpTextArea'>Need To Sign Up?</h3>
+
+                  <Link to='/add-user' className='signUpBtn'>
+                    Sign Up
+                  </Link>
+                </div>
+              </form>
             </div>
           </div>
         </div>

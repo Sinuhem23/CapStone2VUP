@@ -19,10 +19,9 @@
 }
 .logInCard-body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 .signUpSection {
   align-items: end;
   justify-items: center;
-  margin-left: 1rem;
+  margin-top: 1rem;
 }
