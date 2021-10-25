@@ -16,7 +16,7 @@ export default function Home() {
       <div className='all_uploads'>
         <h3>All Videos</h3>
         <div className='recently_added_playlist_videos'>
-          {/* {youTube.map((vid, idx) => (
+          {youTube.map((vid, idx) => (
             <div className='iframe_container'>
               <div key={idx}>
                 <div className='youtubeLi'>
@@ -56,7 +56,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          ))} */}
+          ))}
           {/* <div>
             <iframe
               src='https://www.youtube.com/embed/yh9PRTMFWKk'

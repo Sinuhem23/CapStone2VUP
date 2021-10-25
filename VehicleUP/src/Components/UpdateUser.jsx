@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserService from '../Services/UserService';
+import '../CSS/updateuser.css'
 
 class UpdateUser extends Component {
 constructor(props)
@@ -67,19 +68,13 @@ this.props.history.push('/users');
 render() {
 return (
 <div>
-<div className="container">
-<div className="row">
-<div className="card col-md-6 offset-md-3 offset-md-3">
-<h3 className="text-center">Update User</h3>
-<div className="card-body">
-    <form>  
-        {/* <div className="form-group">
-            <label>User ID: </label>
-            <input placeholder={this.state.id} readOnly="true" name="id" className="form-control"
-                value={this.state.id} onChange={this.idHandler} />
-        </div>    */}
+
+<div className='backgroundCard'>
+<h3 className="updateText">Update User</h3>
+    <form className='updateForm'>  
+  
         <div className="form-group">
-            <label>User Name: </label>
+            <label className='formLables'>User Name: </label>
             <input 
             placeholder="Name" 
             name="name" 
@@ -88,22 +83,22 @@ return (
             value={this.state.name} onChange={this.nameHandler} />
         </div>   
         <div className="form-group">
-            <label>User Email: </label>
+            <label className='formLables'>User Email: </label>
             <input 
             placeholder="Email" 
             name="email" className="form-control"
             required
             type='email'
             value={this.state.email} onChange={this.emailHandler} />
-        </div>   
-        <button className="btn btn-success" onClick={this.updateUser}> Update </button>
-        <button className="btn btn-danger" onClick={this.cancel.bind(this)}> Cancel </button>                    
+        </div>  
+        <div className='buttonContainers' >
+        <button className="updateBtn btn-success" onClick={this.updateUser}> Update </button>
+        <button className="cancelBtn btn-danger" onClick={this.cancel.bind(this)}> Cancel </button>    
+        </div>                
     </form>
 </div>
 </div>
-</div>
-</div>
-</div>
+
 );
 }
 }

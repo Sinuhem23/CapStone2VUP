@@ -85,12 +85,12 @@ return (
           onChange={this.emailHandler}
         />
       </div>
-      <button className='btn btn-success saveBtn' onClick={this.saveUser}>
+      <button className=' saveBtn' onClick={this.saveUser}>
         {' '}
         Save{' '}
       </button>
       <button
-        className='btn btn-danger'
+        className='cancelBtn'
         onClick={this.cancel.bind(this)}
       >
         {' '}

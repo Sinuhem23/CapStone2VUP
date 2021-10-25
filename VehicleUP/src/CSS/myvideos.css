@@ -56,8 +56,8 @@
 .recently_added_playlist_videos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-gap: 1em;
-  padding: 1em;
+  grid-gap: 6rem;
+  padding: 2rem;
 }
 /* End of Upload Playlist Section ////////////////// */
 
@@ -150,6 +150,7 @@
   }
   .recently_added_playlist_videos {
     grid-gap: 2em;
+    padding: 1rem;
   }
   /* End of Upload to Favorites Section ////////////////////////// */
 

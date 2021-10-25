@@ -70,7 +70,8 @@
 
 @media (max-width: 650px) {
   /* Subnav /////////////////////////////// */
-  .subnav {
+
+  .sub_navbar {
     align-items: center;
   }
   .subnav .subnavbtn {

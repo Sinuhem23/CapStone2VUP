@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserService from '../Services/UserService';
+import EntirePlayList from './EntirePlayList';
 import '../CSS/account.css';
 
 class ListUsers extends Component {
@@ -44,7 +45,7 @@ class ListUsers extends Component {
   render() {
     return (
       <div>
-        <h2 className='text-center'>User List</h2>
+        <h2 className='userAccountText'>{this.state.users.name} Account</h2>
         {/* <div>
           <button className='btn btn-primary' onClick={this.addUser}>
             {' '}
@@ -55,7 +56,7 @@ class ListUsers extends Component {
           <p></p>
         </div>
         <div className='row'>
-          <table className='table table-striped table-bordered'>
+          {/* <table className='table table-striped table-bordered'>
             <thead>
               <tr>
                 <th>User Name</th>
@@ -63,9 +64,35 @@ class ListUsers extends Component {
                 <th>Actions</th>
               </tr>
             </thead>
-            <tbody>
-              {/* {this.state.users.map().filter((u) => u.id === id)} */}
-              {this.state.users.map((user) => (
+            <tbody> */}
+          {/* {this.state.users.map().filter((u) => u.id === id)} */}
+          {this.state.users.map((user) => (
+            <div className='userDetailsContainer' key={user.id}>
+              <div>
+                <image className='userImage' alt='User-Image'></image>
+              </div>
+              <div className='userDetails'>
+                <h3>{user.name} </h3>
+                <h3>{user.email} </h3>
+                <button
+                  onClick={() => this.editUser(user.id)}
+                  className='updateBtn btn-primary'
+                >
+                  Update
+                </button>
+                <button
+                  onClick={() => this.deleteUser(user.id)}
+                  className='deleteBtn btn-danger'
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+          ;{/* <h2>{this.state.users.userName}</h2> */}
+          {/* Entire playlist */}
+          <EntirePlayList />
+          {/* {this.state.users.map((user) => (
                 <tr>
                   <div key={user.id}>
                     <td>{user.name}</td>
@@ -86,9 +113,9 @@ class ListUsers extends Component {
                     </button>
                   </td>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              ))} */}
+          {/* </tbody>
+          </table> */}
         </div>
       </div>
     );
