@@ -56,16 +56,6 @@ class ListUsers extends Component {
           <p></p>
         </div>
         <div className='row'>
-          {/* <table className='table table-striped table-bordered'>
-            <thead>
-              <tr>
-                <th>User Name</th>
-                <th>User Email</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody> */}
-          {/* {this.state.users.map().filter((u) => u.id === id)} */}
           {this.state.users.map((user) => (
             <div className='userDetailsContainer' key={user.id}>
               <div>
@@ -92,30 +82,6 @@ class ListUsers extends Component {
           ;{/* <h2>{this.state.users.userName}</h2> */}
           {/* Entire playlist */}
           <EntirePlayList />
-          {/* {this.state.users.map((user) => (
-                <tr>
-                  <div key={user.id}>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                  </div>
-                  <td>
-                    <button
-                      onClick={() => this.editUser(user.id)}
-                      className='btn btn-primary'
-                    >
-                      Update
-                    </button>
-                    <button
-                      onClick={() => this.deleteUser(user.id)}
-                      className='btn btn-danger'
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))} */}
-          {/* </tbody>
-          </table> */}
         </div>
       </div>
     );
