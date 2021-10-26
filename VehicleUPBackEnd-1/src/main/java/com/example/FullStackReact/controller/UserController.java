@@ -28,14 +28,14 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping("/allusers")
+	@GetMapping("/all-users")
 	public List<User> getAllUsers()
 	{
 		
 		return userService.findAll();
 	}
 	
-	@PostMapping("/adduser")
+	@PostMapping("/add-user")
     public User newUser(@RequestBody User s)
     {
 		
@@ -65,6 +65,20 @@ public class UserController {
 		}
 		
 		return userService.findByName(name);
+	}
+	
+	@GetMapping("/users/username/{username}")
+	public User getUserByUsername(@PathVariable String username)
+	{
+		//return studentRepo.findByName(name);
+		
+		User user=userService.findByUserName(username);
+		if(user == null)
+		{
+			System.out.println(new ResourceNotFoundException("UserName with the username "+ username +" not found"));
+		}
+		
+		return user;
 	}
 	
 	@PutMapping("/user/{id}")

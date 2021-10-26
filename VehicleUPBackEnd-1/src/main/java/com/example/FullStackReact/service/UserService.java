@@ -58,6 +58,12 @@ public class UserService {
 	{
 		userRepository.deleteById(id);
 	}
+
+
+	public User findByUserName(String username) {
+		// TODO Auto-generated method stub
+		return userRepository.findByUsername(username);
+	}
 	
 	
 	

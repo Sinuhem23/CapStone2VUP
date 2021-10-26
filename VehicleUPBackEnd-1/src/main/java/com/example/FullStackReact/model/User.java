@@ -1,5 +1,7 @@
 package com.example.FullStackReact.model;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,6 +25,7 @@ public class User {
 	private String username;
 	private String password;
 	
+	
 	public String getUsername() {
 		return username;
 	}
@@ -44,12 +47,15 @@ public class User {
 	
 	}
 
-	public User(String name, String email) {
+	public User(String name, String email, String username, String password) {
 		super();
 		this.name = name;
 		this.email = email;
+		this.username = username;
+		this.password = password;
 		
 	}
+	
 
 	public int getId() {
 		return id;
@@ -73,6 +79,24 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(email, id, name, password, username);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(email, other.email) && id == other.id && Objects.equals(name, other.name)
+				&& Objects.equals(password, other.password) && Objects.equals(username, other.username);
 	}
 	
 	

@@ -16,7 +16,6 @@ import AddUser from './Components/AddUser';
 import UpdateUser from './Components/UpdateUser';
 import DeleteUser from './Components/DeleteUser';
 import LogIn from './Components/LogIn';
-import SignUpButton from './Components/SignUpButton.jsx';
 import TrendingVideo from './Components/TrendingVideo';
 
 export const ListContext = createContext();
@@ -82,7 +81,6 @@ function App() {
             <Route path='/add-user' component={AddUser}></Route>
             <Route path='/update-user/:id' component={UpdateUser}></Route>
             <Route path='/delete-user/:id' component={DeleteUser}></Route>
-            <Route path='/signup' component={SignUpButton}></Route>
             <Route path='/login' component={LogIn}></Route>
 
             <Route exact path='/trending-airplanes'>
