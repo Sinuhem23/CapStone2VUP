@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../CSS/trendingmotorcycles.css';
 import SearchBar from './SearchBar';
+const moment = require('moment');
 
 function TrendingVideo({ term, title }) {
   const [videos, setVideos] = useState([]);
@@ -24,12 +25,31 @@ function TrendingVideo({ term, title }) {
           {videos.map((vid, idx) => (
             <div key={idx}>
               <iframe
-                src={`https://www.youtube.com/embed/${vid.id}`}
+                width='360'
+                height='215'
+                src={`https://www.youtube.com/embed/${vid.id.videoId}`}
                 title='YouTube video player'
                 frameborder='0'
                 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                allowfullscreen
+                allowFullScreen
               ></iframe>
+              <div>
+                <h4 className='channelTitle'>{vid.snippet.channelTitle}</h4>
+                <p className='ytDescription'>{vid.snippet.description}</p>
+                <p className='ytDate'>
+                  {' '}
+                  {moment(vid.snippet.publishedAt).format('dddd, MMMM Do YYYY')}
+                </p>
+
+                <a
+                  className='youtubeLink'
+                  target='_blank'
+                  rel='noreferrer'
+                  href={`https://www.youtube.com/watch?v=${vid.id.videoId}`}
+                >
+                  Youtube Link
+                </a>
+              </div>
             </div>
           ))}
         </div>

@@ -28,7 +28,7 @@ export default function Home() {
                       title='YouTube video player'
                       frameborder='0'
                       allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-                      allowfullscreen
+                      allowFullScreen
                     ></iframe>
                     <h3 className='ytTitle'>{vid.snippet.title}</h3>
                     <div>
