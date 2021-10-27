@@ -47,7 +47,7 @@ class ListUsers extends Component {
           {this.state.user.username ? (
             <>
               <div>
-                <img className='userImage'></img>
+                <image className='userImage'></image>
               </div>
               <div className='userDetails'>
                 <h3>Username: {this.state.user.username} </h3>
@@ -67,7 +67,9 @@ class ListUsers extends Component {
               </div>
             </>
           ) : (
-            <h3></h3>
+            <h3>
+              <></>
+            </h3>
           )}
         </div>
 
