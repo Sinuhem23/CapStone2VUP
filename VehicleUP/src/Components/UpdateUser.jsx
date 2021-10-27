@@ -31,10 +31,7 @@ email:user.email
 
 }
 
-// idHandler=(event) => {
-//     this.setState({
-//          id: event.target.value});
-// }
+
 
 nameHandler=(event) => {
 this.setState({

@@ -24,10 +24,6 @@ class ListUsers extends Component {
     }
   }
 
-  // addUser() {
-  //   this.props.history.push('/add-user');
-  // }
-
   editUser(id) {
     this.props.history.push(`/update-user/${id}`);
   }
@@ -36,17 +32,11 @@ class ListUsers extends Component {
     this.props.history.push(`/delete-user/${id}`);
   }
 
-  // viewUser(id) {
-  //   this.props.history.push(`/view-user/${id}`);
-  // }
-
   render() {
     return (
       <div>
         {this.state.user.username ? (
-          <h2 className='userAccountText'>
-            {this.state.user.username}'s Account
-          </h2>
+          <h2 className='userAccountText'>{this.state.user.name}'s Account</h2>
         ) : (
           <Link className='signUpLink' to='/add-user'>
             Sign up!
@@ -57,11 +47,11 @@ class ListUsers extends Component {
           {this.state.user.username ? (
             <>
               <div>
-                <image className='userImage' alt='User-Image'></image>
+                <img className='userImage'></img>
               </div>
               <div className='userDetails'>
-                <h3>{this.state.user.name} </h3>
-                <h3>{this.state.user.email} </h3>
+                <h3>Username: {this.state.user.username} </h3>
+                <h3>Email: {this.state.user.email} </h3>
                 <button
                   onClick={() => this.editUser(this.state.user.id)}
                   className='updateBtn btn-primary'

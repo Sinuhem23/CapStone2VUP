@@ -3,6 +3,13 @@ import '../CSS/login.css';
 import { Link } from 'react-router-dom';
 
 export default class LogIn extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {},
+    };
+  }
+
   render() {
     return (
       <div>

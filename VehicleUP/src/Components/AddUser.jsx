@@ -14,7 +14,6 @@ username: '',
 password: '',
 };
 
-// this.idHandler = this.idHandler.bind(this);
 this.nameHandler = this.nameHandler.bind(this);
 this.emailHandler = this.emailHandler.bind(this);
 this.usernameHandler = this.usernameHandler.bind(this);
@@ -22,11 +21,7 @@ this.passwordHandler = this.passwordHandler.bind(this);
 
 } //constructor
 
-// idHandler = (event) => {
-//   this.setState({
-//     id: event.target.value,
-//   });
-// };
+ 
 
 nameHandler = (event) => {
 this.setState({
@@ -89,6 +84,7 @@ return (
         <input
           placeholder='Name'
           name='name'
+          required
           className='form-control'
           value={this.state.name}
           onChange={this.nameHandler}
@@ -100,6 +96,8 @@ return (
         <input
           placeholder='Email'
           name='email'
+          type='email'
+          required
           className='form-control'
           value={this.state.email}
           onChange={this.emailHandler}
@@ -110,6 +108,7 @@ return (
         <input
           placeholder='Name'
           name='name'
+          required
           className='form-control'
           value={this.state.username}
           onChange={this.usernameHandler}
@@ -121,6 +120,8 @@ return (
           placeholder='Password'
           name='password'
           type='password'
+          required
+
           className='form-control'
           value={this.state.password}
           onChange={this.passwordHandler}
