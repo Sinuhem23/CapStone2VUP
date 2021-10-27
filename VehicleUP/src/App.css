@@ -63,6 +63,7 @@ iframe {
 /* All Navbar Container //////////////////*/
 .all_Navbar_Container {
   position: sticky;
+  z-index: 1;
   top: 0;
 }
 /* End of All Navbar Container ///////////////// */
