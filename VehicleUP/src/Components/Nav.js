@@ -18,6 +18,7 @@ class Nav extends Component {
     if (user !== null) {
       UserService.getUserByUserName(user).then((res) => {
         this.setState({ user: { ...res.data } });
+
         // this.setState({ user: res.data });
       });
     }

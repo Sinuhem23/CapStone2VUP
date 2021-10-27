@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { getUserFromStorage } from '../LocalStorage/useLocalStorage';
+import UserService from '../Services/UserService';
+
 import '../CSS/subnav.css';
 
 const subNav = [
@@ -9,56 +12,86 @@ const subNav = [
   { url: '/', name: 'All' },
 ];
 
-export default function SubNav() {
-  return (
-    <div>
-      <div className='all_Navbar_Container'>
-        {/* -- Sub-Navbar -- */}
-        {/* -- The navigation menu -- */}
-        <div className='sub_navbar'>
-          <a href='./likedvideos'>Liked Videos</a>
-          <div className='subnav'>
-            <button className='subnavbtn'>
-              Playlist <i className='fa fa-caret-down'></i>
-            </button>
-            <div className='subnav-content'>
-              <a href='./entireplaylist'>All</a>
+class SubNav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {},
+    };
+  }
+  componentDidMount() {
+    let user = getUserFromStorage();
+    if (user !== null) {
+      UserService.getUserByUserName(user).then((res) => {
+        this.setState({ user: { ...res.data } });
+        // this.setState({ user: res.data });
+      });
+    }
+  }
+  render() {
+    return (
+      <div>
+        <div className='all_Navbar_Container'>
+          {/* -- Sub-Navbar -- */}
+          {/* -- The navigation menu -- */}
+          {this.state.user.username ? (
+            <div className='sub_navbar'>
+              <a href='./likedvideos'>Liked Videos</a>
+              <div className='subnav'>
+                <button className='subnavbtn'>
+                  Playlist <i className='fa fa-caret-down'></i>
+                </button>
+                <div className='subnav-content'>
+                  <a href='./entireplaylist'>All</a>
 
-              <a href='./favorite-playlist'>Favorite List</a>
-            </div>
-          </div>
-          <div className='subnav'>
-            <button className='subnavbtn'>
-              Account <i className='fa fa-caret-down'></i>
-            </button>
-            <div className='subnav-content'>
-              <a href='./myvideos'>My videos</a>
+                  <a href='./favorite-playlist'>Favorite List</a>
+                </div>
+              </div>
+              <div className='subnav'>
+                <button className='subnavbtn'>
+                  Account <i className='fa fa-caret-down'></i>
+                </button>
+                <div className='subnav-content'>
+                  <a href='./myvideos'>My videos</a>
 
-              <a href='./users'>My information</a>
+                  <a href='./users'>My information</a>
+                </div>
+              </div>
+              <div className='subnav'>
+                <button className='subnavbtn'>
+                  Trending <i className='fa fa-caret-down'></i>
+                </button>
+                <div className='subnav-content'>
+                  {subNav.map((item, idx) => (
+                    <a key={idx} href={item.url}>
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <a href='./history'>History</a>
             </div>
-          </div>
-          <div className='subnav'>
-            <button className='subnavbtn'>
-              Trending <i className='fa fa-caret-down'></i>
-            </button>
-            <div className='subnav-content'>
-              {subNav.map((item, idx) => (
-                <a key={idx} href={item.url}>
-                  {item.name}
-                </a>
-              ))}
-              {/* <a href='./trendingboats'>Boats</a>
-              <a href='./trendingcars'>Cars</a>
-              <a href='./trendingmotorcycles'>Motorcycles</a>
-              <a href='./trendingairplanes'>Airplanes</a>
-              <a href='./'>All</a> */}
+          ) : (
+            <div className='sub_navbar'>
+              <div className='subnav'>
+                <button className='subnavbtn'>
+                  Trending <i className='fa fa-caret-down'></i>
+                </button>
+                <div className='subnav-content'>
+                  {subNav.map((item, idx) => (
+                    <a key={idx} href={item.url}>
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-          <a href='./history'>History</a>
+          )}
+          {/* -- End of Sub-Navbar -- */}
         </div>
-        {/* -- End of Sub-Navbar -- */}
+        {/* -- End of All Navbar Container -- */}
       </div>
-      {/* -- End of All Navbar Container -- */}
-    </div>
-  );
+    );
+  }
 }
+export default SubNav;

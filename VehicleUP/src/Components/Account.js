@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import UserService from '../Services/UserService';
 import { getUserFromStorage } from '../LocalStorage/useLocalStorage';
 import { Link } from 'react-router-dom';
-// import EntirePlayList from './EntirePlayList';
+import EntirePlayList from './EntirePlayList';
 import '../CSS/account.css';
 
 class ListUsers extends Component {
@@ -85,32 +85,8 @@ class ListUsers extends Component {
           <p></p>
         </div>
         <div className='row'>
-          {/* {this.state.user.map((user) => (
-            <div className='userDetailsContainer' key={user.id}>
-              <div>
-                <image className='userImage' alt='User-Image'></image>
-              </div>
-              <div className='userDetails'>
-                <h3>{user.name} </h3>
-                <h3>{user.email} </h3>
-                <button
-                  onClick={() => this.editUser(user.id)}
-                  className='updateBtn btn-primary'
-                >
-                  Update
-                </button>
-                <button
-                  onClick={() => this.deleteUser(user.id)}
-                  className='deleteBtn btn-danger'
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          ))} */}
-          ;{/* <h2>{this.state.users.userName}</h2> */}
           {/* Entire playlist */}
-          {/* <EntirePlayList /> */}
+          <EntirePlayList />
         </div>
       </div>
     );
