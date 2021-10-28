@@ -29,3 +29,19 @@ Since this application is designed to run locally, to see it in action you will 
 - React Router DOM
 - Copy the Front End folder code of this repository to your React JS application.
 - Before running the application, make sure that your Back End is set up and running
+- Installation instructons.
+
+## If you want to run this Full Stack application 
+You have to perform this Back End installations before installing and running the Front End:
+
+Install MySQL Community and select Developer installation during the installation process. Make sure to save your root password on a safe place. Once installed, open MySQL command line (it will ask for your root password to access it). Then create a database called to_do_list and a table called task inside of it, with the structure shown on point 2 of this document.
+
+Install Spring Tools 4 for Eclipse. Once installed, open Spring Tools Suite, create a new Spring Starter Project using Maven, Java 11, and the following dependencies:
+
+Spring Boot DevTools.
+Spring Data JPA.
+MySQL driver.
+Spring Web.
+Then copy the code on this repository to your Spring application location. Edit the aplication.properties file (located on the resources folder) and change the password to the one you are using for the root user on your MySQL database.
+
+Run the Spring application, and then you are ready to run your React Application on the Front End.
